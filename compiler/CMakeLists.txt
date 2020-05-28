@@ -14,5 +14,5 @@ IF(MSVC)
     add_compile_options(/EHsc)
 ENDIF(MSVC)
 
-add_executable(adoisc src/main.cpp)
-include_directories(inc)
+add_executable(adoisc main.cpp)
+include_directories(../inc)

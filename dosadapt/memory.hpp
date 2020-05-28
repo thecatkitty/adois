@@ -1,5 +1,8 @@
 #pragma once
 
+#include <cstdint>
+
+
 #ifndef __WATCOMC__
 // gcc-ia16 can't utilize far pointers
 typedef std::uint16_t __segment;
