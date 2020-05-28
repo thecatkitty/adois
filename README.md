@@ -5,7 +5,7 @@ The aim of this project is to create a setup program for DOS software.
 
 You'll need OpenWatcom `BIN` (eg. `BINNT64` and `BINNT`) in your path. Also, wizard build doesn't work with the latest CMake release (3.17.2), so putting CMake dev build `bin` directory in PATH is needed too.
 
-`INCLUDE` environment variable should point ti OpenWatcom `H` directory.
+`INCLUDE` environment variable should point to OpenWatcom `H` directory.
 
 Building on Windows
 ------------------
