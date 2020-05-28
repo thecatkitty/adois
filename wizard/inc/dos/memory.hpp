@@ -1,8 +1,8 @@
 #pragma once
 
-#if _MSC_VER
-#define __based(x)
-#define __segment std::uint16_t
+#ifndef __WATCOMC__
+// gcc-ia16 can't utilize far pointers
+typedef std::uint16_t __segment;
 #define far
 #endif
 
@@ -12,9 +12,11 @@ struct seg_mem {
 
   inline seg_mem(std::uint16_t seg) : base(seg) {}
   inline T far *operator+(std::uint16_t idx) {
-    T __based(void) *ptr = 0;
-    ptr += idx;
-    return base :> ptr;
+#ifdef __WATCOMC__
+    return base :> (T __near *)(idx * sizeof(T));
+#else
+    return idx * sizeof(T);
+#endif
   }
   inline T far &operator[](std::uint16_t idx) {
     return *(*this + idx);

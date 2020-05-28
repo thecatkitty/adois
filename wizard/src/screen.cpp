@@ -1,6 +1,6 @@
 #include <algorithm>
 
-#include <shy/screen.hpp>
+#include <dos/screen.hpp>
 
 
 screen::screen() : mem(0xB800), width(80), height(25) {

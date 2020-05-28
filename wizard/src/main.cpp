@@ -1,5 +1,5 @@
 #include <algorithm>
-#include <shy/screen.hpp>
+#include <dos/screen.hpp>
 
 #include <conio.h>
 

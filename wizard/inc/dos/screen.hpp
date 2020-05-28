@@ -2,7 +2,9 @@
 
 #include <array>
 #include <cstdint>
-#include <shy/memory.hpp>
+
+#include <dos/memory.hpp>
+
 
 namespace color {
   enum color {
