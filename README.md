@@ -3,23 +3,12 @@ A DOS-Only Installer
 
 The aim of this project is to create a setup program for DOS software.
 
-You'll need OpenWatcom `BIN` (eg. `BINNT64` and `BINNT`) in your path. Also, wizard build doesn't work with the latest CMake release (3.17.2), so putting CMake dev build `bin` directory in PATH is needed too.
+Currently it builds under Windows only, but I'm working on it! I'm trying to find a way for having both C++1x (OpenWatcom doesn't support it) and `far` pointers (ia16-elf-g++ doesn't support them).
 
-`INCLUDE` environment variable should point to OpenWatcom `H` directory.
+Prerequisites for building
+-------------------------
+* OpenWatcom v2 – `BINNT64` directory in `%PATH%` before VS tools; `%WATCOM%` set
+* VS tools (`cl`, `nmake`...) in `%PATH%` – simplest way is to run *VS Tools Command Prompt* 
+* CMake nightly in `%PATH%` – latest CMake release (3.17.2) doesn't support OW yet
 
-Building on Windows
-------------------
-Inside *VS Tools Command Prompt*.
-
-```powershell
-cmake -G "Watcom WMake" -S wizard -B build\wizard
-cmake -G "NMake Makefiles" -S compiler -B build\compiler
-
-cd build
-cd wizard
-wmake
-
-cd ..
-cd compiler
-nmake
-```
+In order to build everything, run `build.ps1`.
